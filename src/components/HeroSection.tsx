@@ -175,22 +175,19 @@ export const HeroSection = () => {
           {/* RIGHT SIDE - Visual Elements (55% width) */}
           <div className="lg:col-span-7 relative h-screen flex items-center justify-center">
             
-            {/* Main Loomy Character - Center positioned with parallax */}
+            {/* Main Loomy Character - Static and Professional */}
             <div 
               className={`relative z-20 transition-all duration-1200 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-              style={{ 
-                transform: `translateY(${scrollY * 0.3}px) scale(${isVisible ? 1 : 0.95})` 
-              }}
             >
-              {/* Glow effect behind character */}
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl scale-150 animate-wix-pulse-glow" />
+              {/* Subtle glow effect behind character */}
+              <div className="absolute inset-0 bg-primary/10 rounded-full blur-2xl scale-125 opacity-60" />
               
-              {/* Main character */}
-              <div className="relative animate-wix-float hover:scale-105 transition-all duration-500 cursor-pointer">
+              {/* Main character - Static positioning */}
+              <div className="relative transition-all duration-300 hover:scale-102">
                 <img 
                   src="/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png"
                   alt="Loomy - Your AI Learning Companion"
-                  className="h-80 lg:h-96 w-auto drop-shadow-2xl"
+                  className="h-80 lg:h-96 w-auto drop-shadow-xl"
                 />
               </div>
             </div>

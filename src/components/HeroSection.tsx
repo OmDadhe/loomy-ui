@@ -1,95 +1,33 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Play } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 /**
- * Wix-Style Hero Section - Exact positioning and animation specifications
+ * Professional Hero Section - Clean, startup-grade presentation
  * 
  * LAYOUT SPECIFICATIONS:
- * - Left side: 45% width, content aligned left with 80px left padding
- * - Right side: 55% width, visual elements positioned absolutely
- * - Vertical centering with 120px top/bottom padding
+ * - Left side: Content with logo, heading, CTA buttons, and trust indicators
+ * - Right side: Clean, centered Loomy avatar presentation
+ * - Responsive design with proper spacing and typography hierarchy
  * 
- * SCROLL BEHAVIOR:
- * - Loomy avatar: Parallax moves down at 0.3x scroll speed
- * - Floating elements: Different parallax speeds (0.1x to 0.5x)
- * - Background: Subtle parallax at 0.05x speed
- * 
- * FLOATING ELEMENTS POSITIONING (Wix Style):
- * - Top-left: Small template card at 15% from top, 10% from left
- * - Top-right: Larger card at 20% from top, 15% from right  
- * - Bottom-left: Medium card at 70% from top, 8% from left
- * - Center-right: Avatar interaction card following scroll
+ * DESIGN APPROACH:
+ * - Minimal, distraction-free layout focused on core message
+ * - Professional avatar positioning with subtle effects
+ * - Premium micro-interactions and smooth animations
+ * - Startup-grade visual hierarchy and clean aesthetics
  */
 export const HeroSection = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    
     // Staggered entrance animations
     setTimeout(() => setIsVisible(true), 150);
-    
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section className="relative min-h-screen wix-gradient-hero overflow-hidden">
       
-      {/* Wix-Style Floating Background Dots */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Top cluster - Wix orange dots */}
-        <div 
-          className="absolute w-3 h-3 bg-accent rounded-full opacity-40 animate-wix-float"
-          style={{ 
-            top: '15%', 
-            left: '8%',
-            transform: `translateY(${scrollY * 0.1}px)` 
-          }} 
-        />
-        <div 
-          className="absolute w-2 h-2 bg-accent-purple rounded-full opacity-50 animate-wix-float"
-          style={{ 
-            top: '25%', 
-            left: '12%',
-            animationDelay: '1s',
-            transform: `translateY(${scrollY * 0.15}px)` 
-          }} 
-        />
-        
-        {/* Right cluster - Purple dots */}
-        <div 
-          className="absolute w-4 h-4 bg-accent-purple rounded-full opacity-30 animate-wix-float"
-          style={{ 
-            top: '20%', 
-            right: '10%',
-            animationDelay: '2s',
-            transform: `translateY(${scrollY * 0.2}px)` 
-          }} 
-        />
-        <div 
-          className="absolute w-2.5 h-2.5 bg-primary rounded-full opacity-60 animate-wix-float"
-          style={{ 
-            top: '35%', 
-            right: '15%',
-            animationDelay: '0.5s',
-            transform: `translateY(${scrollY * 0.08}px)` 
-          }} 
-        />
-        
-        {/* Bottom cluster - Mixed colors */}
-        <div 
-          className="absolute w-3.5 h-3.5 bg-accent-green rounded-full opacity-45 animate-wix-float"
-          style={{ 
-            bottom: '30%', 
-            left: '6%',
-            animationDelay: '1.5s',
-            transform: `translateY(${scrollY * 0.12}px)` 
-          }} 
-        />
-      </div>
+      {/* Clean professional background - no clutter */}
 
       <div className="container mx-auto px-6 lg:px-16 relative z-10 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-12 gap-8 items-center w-full">
@@ -192,92 +130,7 @@ export const HeroSection = () => {
               </div>
             </div>
 
-            {/* Floating UI Cards - Wix Template Style Positioning */}
-            
-            {/* Top-Left Template Card */}
-            <div 
-              className={`absolute bg-white rounded-2xl p-4 shadow-wix-float border border-gray-100 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ 
-                top: '15%', 
-                left: '10%',
-                width: '180px',
-                transform: `translateY(${scrollY * 0.1}px)` 
-              }}
-            >
-              <div className="space-y-2">
-                <div className="w-full h-20 bg-gradient-to-br from-accent/20 to-accent-purple/20 rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-8 h-8 text-accent" />
-                </div>
-                <div className="space-y-1">
-                  <div className="h-3 bg-gray-200 rounded w-3/4" />
-                  <div className="h-2 bg-gray-100 rounded w-1/2" />
-                </div>
-              </div>
-            </div>
-
-            {/* Top-Right Interaction Card */}
-            <div 
-              className={`absolute bg-white rounded-2xl p-4 shadow-wix-float border border-gray-100 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ 
-                top: '20%', 
-                right: '15%',
-                width: '200px',
-                transform: `translateY(${scrollY * 0.15}px)` 
-              }}
-            >
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png"
-                    alt="Loomy"
-                    className="w-6 h-6 rounded-full"
-                  />
-                </div>
-                <div>
-                  <div className="h-2 bg-gray-200 rounded w-16" />
-                  <div className="h-1.5 bg-gray-100 rounded w-12 mt-1" />
-                </div>
-              </div>
-              <div className="h-2 bg-accent/20 rounded w-full" />
-            </div>
-
-            {/* Bottom-Left Stats Card */}
-            <div 
-              className={`absolute bg-white rounded-2xl p-4 shadow-wix-float border border-gray-100 transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ 
-                bottom: '25%', 
-                left: '8%',
-                width: '160px',
-                transform: `translateY(${scrollY * 0.08}px)` 
-              }}
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">98%</div>
-                <div className="text-xs text-muted-foreground">Success Rate</div>
-                <div className="flex justify-center mt-2">
-                  <div className="w-12 h-1 bg-primary rounded" />
-                </div>
-              </div>
-            </div>
-
-            {/* Center-Right Learning Progress */}
-            <div 
-              className={`absolute bg-white rounded-2xl p-3 shadow-wix-float border border-gray-100 transition-all duration-1000 delay-1300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ 
-                top: '50%', 
-                right: '5%',
-                width: '140px',
-                transform: `translateY(${scrollY * 0.2}px)` 
-              }}
-            >
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-accent-green rounded-full animate-pulse" />
-                <div>
-                  <div className="text-xs font-medium text-foreground">Learning</div>
-                  <div className="text-xs text-muted-foreground">Active</div>
-                </div>
-              </div>
-            </div>
+            {/* Clean, professional presentation - avatar only */}
           </div>
         </div>
       </div>

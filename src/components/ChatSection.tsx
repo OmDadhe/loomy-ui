@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Send, User, Bot } from "lucide-react";
 
@@ -10,6 +11,7 @@ export const ChatSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentMessage, setCurrentMessage] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const chatMessages = [
     {
@@ -183,9 +185,10 @@ export const ChatSection = () => {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <Button 
+            onClick={() => navigate("/login")}
             variant="hero" 
             size="lg"
-            className={`transition-all duration-1000 delay-700 ${isVisible ? 'wix-scroll-reveal revealed' : 'wix-scroll-reveal'}`}
+            className={`transition-all duration-1000 delay-700 hover:scale-105 ${isVisible ? 'wix-scroll-reveal revealed' : 'wix-scroll-reveal'}`}
           >
             Try Loomy Now - It's Free
           </Button>

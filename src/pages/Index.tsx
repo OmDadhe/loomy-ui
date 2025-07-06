@@ -1,6 +1,8 @@
+import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { ChatSection } from "@/components/ChatSection";
 import { FeatureSection, featureSections } from "@/components/FeatureSection";
+import { PricingSection } from "@/components/PricingSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -11,27 +13,44 @@ import { Footer } from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <HeroSection />
+      {/* Navigation */}
+      <Navbar />
       
-      {/* Chat Interface Demo */}
-      <ChatSection />
+        {/* Hero Section - Responsive and Smooth */}
+        <div className="pt-20 lg:pt-32 pb-8">
+          <HeroSection />
+        </div>
       
-      {/* Feature Sections with Overlapping Effects */}
-      {featureSections.map((section, index) => (
-        <FeatureSection
-          key={section.sectionId}
-          sectionId={section.sectionId}
-          title={section.title}
-          subtitle={section.subtitle}
-          description={section.description}
-          features={section.features}
-          reverse={section.reverse}
-        />
-      ))}
+      {/* Chat Interface Demo - Responsive */}
+      <div className="relative">
+        <ChatSection />
+      </div>
       
-      {/* Contact Section */}
-      <ContactSection />
+      {/* Feature Sections with Overlapping Effects - Responsive */}
+      <div id="features" className="relative">
+        {featureSections.map((section, index) => (
+          <div key={section.sectionId} className="relative">
+            <FeatureSection
+              sectionId={section.sectionId}
+              title={section.title}
+              subtitle={section.subtitle}
+              description={section.description}
+              features={section.features}
+              reverse={section.reverse}
+            />
+          </div>
+        ))}
+      </div>
+      
+      {/* Pricing Section - Responsive */}
+      <div className="relative">
+        <PricingSection />
+      </div>
+      
+      {/* Contact Section - Responsive */}
+      <div id="contact" className="relative">
+        <ContactSection />
+      </div>
       
       {/* Footer */}
       <Footer />

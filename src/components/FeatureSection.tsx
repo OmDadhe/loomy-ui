@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Brain, Zap, Target, Users, BookOpen, Lightbulb } from "lucide-react";
+import { Brain, Zap, Target, Users, BookOpen, Lightbulb, ArrowRight } from "lucide-react";
 
 interface FeatureSectionProps {
   title: string;
@@ -33,6 +34,7 @@ export const FeatureSection = ({
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -124,11 +126,14 @@ export const FeatureSection = ({
             </div>
 
             <div className={`pt-4 transition-all duration-1000 delay-700 ${isVisible ? 'wix-scroll-reveal revealed' : 'wix-scroll-reveal'}`}>
-              <Button variant="hero" size="lg" className="group">
+              <Button 
+                onClick={() => navigate("/login")}
+                variant="hero" 
+                size="lg" 
+                className="group hover:scale-105 transition-all duration-300"
+              >
                 Learn More
-                <div className="w-0 group-hover:w-4 transition-all duration-300 overflow-hidden">
-                  <div className="w-4 h-4 bg-white rounded-full ml-2" />
-                </div>
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>

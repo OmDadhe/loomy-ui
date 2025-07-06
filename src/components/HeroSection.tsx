@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -6,7 +7,7 @@ import { ArrowRight } from "lucide-react";
  * Professional Hero Section - Clean, startup-grade presentation
  * 
  * LAYOUT SPECIFICATIONS:
- * - Left side: Content with logo, heading, CTA buttons, and trust indicators
+ * - Left side: Content with heading, CTA buttons, and trust indicators
  * - Right side: Clean, centered Loomy avatar presentation
  * - Responsive design with proper spacing and typography hierarchy
  * 
@@ -18,11 +19,16 @@ import { ArrowRight } from "lucide-react";
  */
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Staggered entrance animations
     setTimeout(() => setIsVisible(true), 150);
   }, []);
+
+  const handleGetStarted = () => {
+    navigate("/login");
+  };
 
   return (
     <section className="relative min-h-screen wix-gradient-hero overflow-hidden">
@@ -43,14 +49,6 @@ export const HeroSection = () => {
           {/* LEFT SIDE - Content */}
           <div className="space-y-8 lg:pr-8">
             
-            {/* Logo */}
-            <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-              <img 
-                src="/lovable-uploads/dae96d64-cc83-4a23-91fa-d8ab709c695c.png" 
-                alt="Loomy Logo" 
-                className="h-12 w-auto mb-4"
-              />
-            </div>
 
             {/* Main Heading - Modern SaaS style */}
             <div className="space-y-6">
@@ -74,6 +72,7 @@ export const HeroSection = () => {
             {/* CTA Button - Single, prominent */}
             <div className={`pt-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <Button 
+                onClick={handleGetStarted}
                 variant="hero" 
                 size="xl"
                 className="group bg-primary hover:bg-primary/90 text-white px-10 py-5 text-lg font-semibold rounded-2xl shadow-wix-float hover:shadow-wix-glow transform hover:scale-105 transition-all duration-300"
@@ -128,7 +127,7 @@ export const HeroSection = () => {
                   
                   {/* Main avatar */}
                   <img 
-                    src="/lovable-uploads/4c845139-dd32-48d6-a657-28ef00c469e9.png"
+                    src="/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png"
                     alt="Loomy - Your AI Learning Companion"
                     className="relative h-64 sm:h-80 lg:h-96 w-auto mx-auto transition-all duration-500 group-hover:scale-105"
                   />

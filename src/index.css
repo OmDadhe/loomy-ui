@@ -196,4 +196,36 @@ All colors MUST be HSL.
     background: var(--gradient-feature);
     border-radius: 2rem 2rem 0 0;
   }
+
+  /* Professional Shadow Utilities */
+  .shadow-wix-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-wix-float {
+    box-shadow: var(--shadow-float);
+  }
+
+  .shadow-wix-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Professional Animation Keyframes */
+  @keyframes wix-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-wix-float {
+    animation: wix-float 6s ease-in-out infinite;
+  }
+
+  /* Wix Colors for Button Variants */
+  .wix-primary {
+    background: hsl(var(--primary));
+  }
+
+  .wix-accent {
+    background: hsl(var(--accent));
+  }
 }

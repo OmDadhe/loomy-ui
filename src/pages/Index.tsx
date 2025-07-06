@@ -43,7 +43,7 @@ const Index = () => {
       </div>
       
       {/* Pricing Section - Responsive */}
-      <div className="relative">
+      <div id="pricing" className="relative">
         <PricingSection />
       </div>
       

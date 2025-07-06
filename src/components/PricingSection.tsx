@@ -25,53 +25,55 @@ export const PricingSection = () => {
 
   const pricingPlans: PricingPlan[] = [
     {
-      name: "Free",
-      price: "₹0",
-      period: "forever",
-      description: "Perfect for trying out Loomy",
+      name: "Freemium",
+      price: "Free",
+      period: "",
+      description: "Perfect for getting started",
       features: [
-        "5 AI conversations per day",
-        "Basic subject support",
-        "Learning progress tracking",
-        "Mobile app access"
+        "5 questions per day",
+        "No asking via image or voice",
+        "Smart, curriculum aligned AI",
+        "No premium challenges and games",
+        "No ad-free learning",
+        "No priority support",
+        "1 Device"
       ],
       buttonText: "Get Started Free",
       buttonVariant: "outline"
     },
     {
-      name: "Student",
-      price: isAnnual ? "₹1,999" : "₹199",
+      name: "Starter",
+      price: isAnnual ? "₹2999" : "₹299",
       period: isAnnual ? "per year" : "per month",
-      description: "Ideal for individual students",
+      description: "Great for regular learners",
       features: [
-        "Unlimited AI conversations",
-        "All subjects & boards supported",
-        "Advanced learning analytics",
-        "Personalized study plans",
-        "Homework help & explanations",
-        "Practice tests & quizzes",
-        "Priority support"
+        "300 questions per month",
+        "Upto 5 times a day asking via image or voice",
+        "Smart, curriculum adaptive AI", 
+        "Limited access premium challenges and games",
+        "Ad-free learning",
+        "Priority support",
+        "2 Devices"
       ],
       popular: true,
-      buttonText: "Start Learning",
+      buttonText: "Choose Starter",
       buttonVariant: "hero"
     },
     {
-      name: "Premium",
-      price: isAnnual ? "₹3,999" : "₹399",
+      name: "Pro",
+      price: isAnnual ? "₹2999" : "₹599", 
       period: isAnnual ? "per year" : "per month",
       description: "Best for serious learners",
       features: [
-        "Everything in Student plan",
-        "1-on-1 tutoring sessions (2/month)",
-        "Custom learning paths",
-        "Advanced performance insights",
-        "Family sharing (up to 3 accounts)",
-        "Offline content access",
-        "Early access to new features",
-        "24/7 premium support"
+        "Unlimited questions",
+        "Unlimited asking via image or voice",
+        "Advanced + adaptive AI",
+        "Full access premium challenges and games", 
+        "Ad-free learning",
+        "Priority support",
+        "2 Devices"
       ],
-      buttonText: "Go Premium",
+      buttonText: "Go Pro",
       buttonVariant: "premium"
     }
   ];
@@ -118,7 +120,7 @@ export const PricingSection = () => {
             >
               Annual
               <Badge className="absolute -top-2 -right-2 bg-accent text-white text-xs px-2 py-0.5 rounded-full">
-                Save 17%
+                Save 67%
               </Badge>
             </button>
           </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 /**
  * Professional Hero Section - Clean, startup-grade presentation
@@ -27,117 +27,129 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen wix-gradient-hero overflow-hidden">
       
-      {/* Clean professional background - no clutter */}
+      {/* Professional SaaS-style background with subtle patterns */}
+      <div className="absolute inset-0">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--muted)/0.05)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--muted)/0.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        
+        {/* Modern gradient orbs - very subtle */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
 
       <div className="container mx-auto px-6 lg:px-16 relative z-10 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-12 gap-8 items-center w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           
-          {/* LEFT SIDE - Content (45% width) */}
-          <div className="lg:col-span-5 space-y-8">
+          {/* LEFT SIDE - Content */}
+          <div className="space-y-8 lg:pr-8">
             
-            {/* Logo - Wix positioning */}
+            {/* Logo */}
             <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <img 
                 src="/lovable-uploads/dae96d64-cc83-4a23-91fa-d8ab709c695c.png" 
                 alt="Loomy Logo" 
-                className="h-10 w-auto mb-2"
+                className="h-12 w-auto mb-4"
               />
             </div>
 
-            {/* Main Heading - Wix typography hierarchy */}
+            {/* Main Heading - Modern SaaS style */}
             <div className="space-y-6">
               <h1 className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <span className="block text-5xl lg:text-7xl font-bold leading-[0.9] mb-3">
+                <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.95] tracking-tight mb-2">
                   <span className="text-foreground">Go from</span>
                 </span>
-                <span className="block text-5xl lg:text-7xl font-bold leading-[0.9] mb-3">
+                <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.95] tracking-tight mb-2">
                   <span className="wix-text-gradient">Questioning</span>
                 </span>
-                <span className="block text-5xl lg:text-7xl font-bold leading-[0.9]">
+                <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.95] tracking-tight">
                   <span className="text-foreground">to Understanding</span>
                 </span>
               </h1>
               
-              <p className={`text-xl lg:text-2xl text-muted-foreground max-w-lg leading-relaxed transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                Transform confusion into clarity with Loomy, your AI learning companion that adapts to your unique learning style.
+              <p className={`text-lg lg:text-xl text-muted-foreground max-w-xl leading-relaxed transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                Transform confusion into clarity with Loomy, your AI learning companion that adapts to your unique learning style and accelerates your learning journey.
               </p>
             </div>
 
-            {/* Wix-Style CTA Buttons */}
-            <div className={`flex flex-col sm:flex-row gap-4 pt-6 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+            {/* CTA Button - Single, prominent */}
+            <div className={`pt-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <Button 
                 variant="hero" 
                 size="xl"
-                className="group bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-wix-float hover:shadow-wix-glow transform hover:scale-105 transition-all duration-300"
+                className="group bg-primary hover:bg-primary/90 text-white px-10 py-5 text-lg font-semibold rounded-2xl shadow-wix-float hover:shadow-wix-glow transform hover:scale-105 transition-all duration-300"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="group bg-white/80 backdrop-blur-sm border-2 border-gray-200 hover:border-primary text-foreground px-8 py-4 text-lg font-semibold rounded-2xl shadow-wix-card hover:shadow-wix-float transition-all duration-300"
-              >
-                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                Watch Demo
-              </Button>
             </div>
 
-            {/* Trust Indicators - Wix style */}
+            {/* Trust Indicators - Modern style */}
             <div className={`pt-8 space-y-4 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <p className="text-sm text-muted-foreground font-medium">
                 Trusted by 10,000+ learners worldwide
               </p>
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-6">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 bg-accent rounded-full border-2 border-white shadow-sm" />
-                  <div className="w-8 h-8 bg-accent-purple rounded-full border-2 border-white shadow-sm" />
-                  <div className="w-8 h-8 bg-accent-green rounded-full border-2 border-white shadow-sm" />
-                  <div className="w-8 h-8 bg-primary rounded-full border-2 border-white shadow-sm flex items-center justify-center">
+                  <div className="w-8 h-8 bg-accent rounded-full border-2 border-background shadow-sm" />
+                  <div className="w-8 h-8 bg-accent-purple rounded-full border-2 border-background shadow-sm" />
+                  <div className="w-8 h-8 bg-accent-green rounded-full border-2 border-background shadow-sm" />
+                  <div className="w-8 h-8 bg-primary rounded-full border-2 border-background shadow-sm flex items-center justify-center">
                     <span className="text-xs font-bold text-white">+</span>
                   </div>
                 </div>
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center space-x-2">
                   <div className="flex space-x-0.5">
                     {[...Array(5)].map((_, i) => (
                       <div key={i} className="w-4 h-4 bg-yellow-400 rounded-sm transform rotate-45" />
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-muted-foreground ml-2">4.9/5</span>
+                  <span className="text-sm font-medium text-muted-foreground">4.9/5 rating</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE - Visual Elements (55% width) */}
-          <div className="lg:col-span-7 relative h-screen flex items-center justify-center">
+          {/* RIGHT SIDE - Professional Avatar Presentation */}
+          <div className="relative flex items-center justify-center lg:justify-end">
             
-            {/* Main Loomy Character - Static and Professional */}
+            {/* Professional container with modern design */}
             <div 
-              className={`relative z-20 transition-all duration-1200 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+              className={`relative transition-all duration-1200 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
             >
-              {/* Subtle glow effect behind character */}
-              <div className="absolute inset-0 bg-primary/10 rounded-full blur-2xl scale-125 opacity-60" />
+              {/* Modern background elements */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent rounded-3xl blur-2xl scale-110" />
               
-              {/* Main character - Static positioning */}
-              <div className="relative transition-all duration-300 hover:scale-102">
-                <img 
-                  src="/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png"
-                  alt="Loomy - Your AI Learning Companion"
-                  className="h-80 lg:h-96 w-auto drop-shadow-xl"
-                />
+              {/* Professional frame */}
+              <div className="relative bg-card/50 backdrop-blur-sm border border-border/20 rounded-3xl p-8 lg:p-12 shadow-wix-float">
+                {/* Avatar container */}
+                <div className="relative group">
+                  {/* Subtle hover glow */}
+                  <div className="absolute -inset-4 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
+                  
+                  {/* Main avatar */}
+                  <img 
+                    src="/lovable-uploads/4c845139-dd32-48d6-a657-28ef00c469e9.png"
+                    alt="Loomy - Your AI Learning Companion"
+                    className="relative h-64 sm:h-80 lg:h-96 w-auto mx-auto transition-all duration-500 group-hover:scale-105"
+                  />
+                  
+                  {/* Professional accent dots */}
+                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-accent rounded-full animate-pulse" />
+                  <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-primary rounded-full animate-pulse delay-1000" />
+                </div>
               </div>
+              
+              {/* Floating elements for depth */}
+              <div className="absolute -top-6 -left-6 w-12 h-12 bg-primary/10 rounded-2xl backdrop-blur-sm border border-primary/20 rotate-12 animate-wix-float" />
+              <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-accent/10 rounded-2xl backdrop-blur-sm border border-accent/20 -rotate-12 animate-wix-float delay-1000" />
             </div>
-
-            {/* Clean, professional presentation - avatar only */}
           </div>
         </div>
       </div>
 
-      {/* Wix-style Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
-        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center bg-white/50 backdrop-blur-sm">
+      {/* Modern scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-primary/20 rounded-full flex justify-center bg-card/80 backdrop-blur-sm shadow-sm">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
       </div>

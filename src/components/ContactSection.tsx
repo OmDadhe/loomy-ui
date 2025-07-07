@@ -187,29 +187,6 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            {/* Testimonial */}
-            <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'wix-scroll-reveal revealed' : 'wix-scroll-reveal'}`}>
-              <Card className="p-6 bg-wix-primary text-white border-0 shadow-wix-glow">
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-current text-yellow-400" />
-                  ))}
-                </div>
-                <blockquote className="text-lg mb-4">
-                  "Loomy transformed how I study. The personalized approach and instant feedback 
-                  helped me understand complex concepts I'd been struggling with for months!"
-                </blockquote>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-semibold">SJ</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Sarah Johnson</p>
-                    <p className="text-sm opacity-90">Computer Science Student</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
 
             {/* Quick Stats */}
             <div className={`transition-all duration-1000 delay-900 ${isVisible ? 'wix-scroll-reveal revealed' : 'wix-scroll-reveal'}`}>

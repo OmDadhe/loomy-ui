@@ -3,7 +3,10 @@ import { HeroSection } from "@/components/HeroSection";
 import { MobileHeroAvatar } from "@/components/MobileHeroAvatar";
 import { ChatSection } from "@/components/ChatSection";
 import { FeatureSection, featureSections } from "@/components/FeatureSection";
+import { CrossPlatformSection } from "@/components/CrossPlatformSection";
 import { PricingSection } from "@/components/PricingSection";
+import { BlogSection } from "@/components/BlogSection";
+import { TestimonialSection } from "@/components/TestimonialSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -46,9 +49,24 @@ const Index = () => {
         ))}
       </div>
       
+      {/* Cross Platform Integration - After Collaborative Learning */}
+      <div className="relative">
+        <CrossPlatformSection />
+      </div>
+      
       {/* Pricing Section - Responsive */}
       <div id="pricing" className="relative">
         <PricingSection />
+      </div>
+      
+      {/* Blog Section */}
+      <div className="relative">
+        <BlogSection />
+      </div>
+      
+      {/* Testimonial Section */}
+      <div className="relative">
+        <TestimonialSection />
       </div>
       
       {/* Contact Section - Responsive */}

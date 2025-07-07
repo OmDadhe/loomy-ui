@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
+import { MobileHeroAvatar } from "@/components/MobileHeroAvatar";
 import { ChatSection } from "@/components/ChatSection";
 import { FeatureSection, featureSections } from "@/components/FeatureSection";
 import { PricingSection } from "@/components/PricingSection";
@@ -15,6 +16,9 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Navigation */}
       <Navbar />
+      
+      {/* Mobile Hero Avatar - Shown only on mobile */}
+      <MobileHeroAvatar />
       
         {/* Hero Section - Responsive and Smooth */}
         <div className="pt-20 lg:pt-32 pb-8">

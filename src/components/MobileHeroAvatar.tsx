@@ -19,7 +19,7 @@ export const MobileHeroAvatar = () => {
               {/* Avatar with professional frame */}
               <div className="relative w-40 h-40 rounded-full bg-card/95 backdrop-blur-lg border-4 border-primary/30 flex items-center justify-center shadow-2xl">
                 <img 
-                  src="/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png"
+                  src="/lovable-uploads/c460e404-d130-4c54-995b-e0fab931ed74.png"
                   alt="Loomy - Your AI Learning Companion"
                   className="w-32 h-32 transition-transform duration-500 hover:scale-105"
                 />

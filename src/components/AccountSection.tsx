@@ -8,8 +8,8 @@ const loomyAvatar = "/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png";
 
 export const AccountSection = () => {
   return (
-    <div className="flex-1 p-6 overflow-auto">
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="flex-1 p-4 md:p-6 overflow-auto">
+      <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Account Settings</h1>
@@ -17,18 +17,18 @@ export const AccountSection = () => {
         </div>
 
         {/* Profile Card */}
-        <Card className="p-6">
-          <div className="flex items-center space-x-6 mb-6">
+        <Card className="p-4 md:p-6">
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mb-4 md:mb-6">
             <div className="relative">
               <img src={loomyAvatar} alt="Profile" className="w-20 h-20 rounded-full" />
               <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-accent-green rounded-full border-2 border-background flex items-center justify-center">
                 <div className="w-3 h-3 bg-white rounded-full"></div>
               </div>
             </div>
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold mb-1">Alex Johnson</h2>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-xl md:text-2xl font-bold mb-1">Alex Johnson</h2>
               <p className="text-muted-foreground mb-2">Premium Learning Member</p>
-              <div className="flex items-center space-x-4">
+              <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 md:space-x-4">
                 <Badge variant="secondary" className="bg-primary/10 text-primary">
                   <Award className="w-3 h-3 mr-1" />
                   Level 12
@@ -39,7 +39,7 @@ export const AccountSection = () => {
                 </Badge>
               </div>
             </div>
-            <Button variant="outline">
+            <Button variant="outline" className="w-full md:w-auto">
               <Settings className="w-4 h-4 mr-2" />
               Edit Profile
             </Button>

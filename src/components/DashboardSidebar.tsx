@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Menu, X, MessageSquare, Grid3X3, Clock, User, Plus } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Menu, X, MessageSquare, Grid3X3, Clock, User, Plus, Award, Zap } from "lucide-react";
 // Using existing avatar for now
 const loomyAvatar = "/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png";
 
@@ -21,7 +22,8 @@ export const DashboardSidebar = ({
 }: DashboardSidebarProps) => {
   const navItems = [
     { id: 'chat', label: 'New Chat', icon: Plus },
-    { id: 'features', label: 'Session History', icon: Grid3X3 },
+    { id: 'features', label: 'Features', icon: Grid3X3 },
+    { id: 'history', label: 'History', icon: Clock },
   ];
 
   return (
@@ -50,6 +52,24 @@ export const DashboardSidebar = ({
         </Button>
       </div>
 
+      {/* Stats Section */}
+      {!collapsed && (
+        <div className="p-4 space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Award className="w-4 h-4 text-purple-500" />
+              <span className="text-sm font-medium">150 Points</span>
+            </div>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Zap className="w-4 h-4 text-orange-500" />
+              <span className="text-sm font-medium">5 Day Streak</span>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navigation */}
       <div className="flex-1 p-4 space-y-2">
         {navItems.map((item) => (
@@ -57,7 +77,12 @@ export const DashboardSidebar = ({
             key={item.id}
             variant={activeSection === item.id ? "default" : "ghost"}
             className={`w-full justify-start ${collapsed ? 'px-3' : 'px-4'}`}
-            onClick={() => setActiveSection(item.id as any)}
+            onClick={() => {
+              setActiveSection(item.id as any);
+              if (isMobile) {
+                setCollapsed(true);
+              }
+            }}
           >
             <item.icon className={`w-4 h-4 ${collapsed ? '' : 'mr-2'}`} />
             {!collapsed && <span>{item.label}</span>}
@@ -70,7 +95,12 @@ export const DashboardSidebar = ({
         <Button
           variant={activeSection === 'account' ? "default" : "ghost"}
           className={`w-full justify-start ${collapsed ? 'px-3' : 'px-4'}`}
-          onClick={() => setActiveSection('account')}
+          onClick={() => {
+            setActiveSection('account');
+            if (isMobile) {
+              setCollapsed(true);
+            }
+          }}
         >
           <User className={`w-4 h-4 ${collapsed ? '' : 'mr-2'}`} />
           {!collapsed && <span>Account</span>}

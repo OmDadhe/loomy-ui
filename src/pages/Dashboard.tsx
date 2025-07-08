@@ -5,6 +5,8 @@ import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { DashboardMain } from "@/components/DashboardMain";
 import { ChatInterface } from "@/components/ChatInterface";
 import { AccountSection } from "@/components/AccountSection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { HistorySection } from "@/components/HistorySection";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 /**
@@ -58,8 +60,8 @@ export const Dashboard = () => {
         {activeSection === 'home' && <DashboardMain onStartChat={() => setActiveSection('chat')} />}
         {activeSection === 'chat' && <ChatInterface />}
         {activeSection === 'account' && <AccountSection />}
-        {activeSection === 'history' && <DashboardMain onStartChat={() => setActiveSection('chat')} />}
-        {activeSection === 'features' && <DashboardMain onStartChat={() => setActiveSection('chat')} />}
+        {activeSection === 'history' && <HistorySection />}
+        {activeSection === 'features' && <FeaturesSection />}
       </div>
     </div>
   );

@@ -68,23 +68,12 @@ export const ChatInterface = () => {
   return (
     <div className="flex-1 flex flex-col h-screen">
       {/* Header */}
-      <div className="border-b border-border p-4 flex items-center justify-between bg-card">
-        <div className="flex items-center space-x-3">
+      <div className="border-b border-border p-4 bg-card">
+        <div className="flex items-center justify-center space-x-3">
           <img src={loomyAvatar} alt="Loomy" className="w-10 h-10 rounded-full" />
-          <div>
+          <div className="text-center">
             <h2 className="font-semibold">Loomy</h2>
             <p className="text-sm text-muted-foreground">AI Learning Companion</p>
-          </div>
-        </div>
-        
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2">
-            <Award className="w-4 h-4 text-purple-500" />
-            <span className="text-sm font-medium">150 Points</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Zap className="w-4 h-4 text-orange-500" />
-            <span className="text-sm font-medium">5 Day Streak</span>
           </div>
         </div>
       </div>
@@ -96,7 +85,7 @@ export const ChatInterface = () => {
             <div className="flex flex-col items-center space-y-4">
               <img src={loomyAvatar} alt="Loomy" className="w-20 h-20 rounded-full" />
               <div className="text-center">
-                <h2 className="text-2xl font-bold mb-2">What can I help you with?</h2>
+                <h2 className="text-2xl font-bold mb-2">What can we learn today?</h2>
                 <p className="text-muted-foreground">I'm here to help you learn anything you want!</p>
               </div>
             </div>

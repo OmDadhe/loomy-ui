@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { DashboardMain } from "@/components/DashboardMain";
 import { ChatInterface } from "@/components/ChatInterface";
@@ -39,6 +41,20 @@ export const Dashboard = () => {
       
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
+        {/* Mobile Menu Button */}
+        {isMobile && sidebarCollapsed && (
+          <div className="fixed top-4 left-4 z-30">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setSidebarCollapsed(false)}
+              className="p-2 bg-background border-border"
+            >
+              <Menu className="w-4 h-4" />
+            </Button>
+          </div>
+        )}
+        
         {activeSection === 'home' && <DashboardMain onStartChat={() => setActiveSection('chat')} />}
         {activeSection === 'chat' && <ChatInterface />}
         {activeSection === 'account' && <AccountSection />}

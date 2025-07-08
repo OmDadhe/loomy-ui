@@ -9,22 +9,29 @@ interface DashboardSidebarProps {
   setActiveSection: (section: 'home' | 'chat' | 'history' | 'features' | 'account') => void;
   collapsed: boolean;
   setCollapsed: (collapsed: boolean) => void;
+  isMobile: boolean;
 }
 
 export const DashboardSidebar = ({ 
   activeSection, 
   setActiveSection, 
   collapsed, 
-  setCollapsed 
+  setCollapsed,
+  isMobile 
 }: DashboardSidebarProps) => {
   const navItems = [
     { id: 'chat', label: 'New Chat', icon: Plus },
-    { id: 'features', label: 'Features', icon: Grid3X3 },
-    { id: 'history', label: 'History', icon: Clock },
+    { id: 'features', label: 'Session History', icon: Grid3X3 },
   ];
 
   return (
-    <div className={`${collapsed ? 'w-16' : 'w-64'} transition-all duration-300 bg-card border-r border-border flex flex-col`}>
+    <div className={`${
+      isMobile 
+        ? `fixed left-0 top-0 h-full z-50 transform transition-transform duration-300 ${
+            collapsed ? '-translate-x-full' : 'translate-x-0'
+          } w-64` 
+        : `${collapsed ? 'w-16' : 'w-64'} transition-all duration-300`
+    } bg-card border-r border-border flex flex-col`}>
       {/* Header */}
       <div className="p-4 border-b border-border flex items-center justify-between">
         {!collapsed && (

@@ -1,24 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { DashboardMain } from "@/components/DashboardMain";
 import { ChatInterface } from "@/components/ChatInterface";
 import { AccountSection } from "@/components/AccountSection";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 /**
  * Main Dashboard Page - Home screen after login
  */
 export const Dashboard = () => {
   const [activeSection, setActiveSection] = useState<'home' | 'chat' | 'history' | 'features' | 'account'>('home');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const isMobile = useIsMobile();
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(isMobile);
+
+  // Update sidebar state based on screen size
+  useEffect(() => {
+    setSidebarCollapsed(isMobile);
+  }, [isMobile]);
 
   return (
-    <div className="flex h-screen bg-background text-foreground overflow-hidden">
+    <div className="flex h-screen bg-background text-foreground overflow-hidden relative">
+      {/* Mobile Overlay */}
+      {isMobile && !sidebarCollapsed && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setSidebarCollapsed(true)}
+        />
+      )}
+      
       {/* Sidebar */}
       <DashboardSidebar 
         activeSection={activeSection}
         setActiveSection={setActiveSection}
         collapsed={sidebarCollapsed}
         setCollapsed={setSidebarCollapsed}
+        isMobile={isMobile}
       />
       
       {/* Main Content */}

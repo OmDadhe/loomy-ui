@@ -13,13 +13,7 @@ interface Message {
 }
 
 export const ChatInterface = () => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      type: 'loomy',
-      content: "Hi there! I'm Loomy, your AI learning companion. What would you like to learn today?",
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -97,7 +91,18 @@ export const ChatInterface = () => {
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {messages.map((message, index) => (
+        {messages.length === 0 ? (
+          <div className="flex flex-col items-center justify-center h-full space-y-6">
+            <div className="flex flex-col items-center space-y-4">
+              <img src={loomyAvatar} alt="Loomy" className="w-20 h-20 rounded-full" />
+              <div className="text-center">
+                <h2 className="text-2xl font-bold mb-2">What can I help you with?</h2>
+                <p className="text-muted-foreground">I'm here to help you learn anything you want!</p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          messages.map((message, index) => (
           <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
             {message.type === 'loomy' && (
               <div className="flex items-start space-x-3">
@@ -120,7 +125,8 @@ export const ChatInterface = () => {
               </div>
             )}
           </div>
-        ))}
+          ))
+        )}
         <div ref={messagesEndRef} />
       </div>
 
@@ -132,7 +138,7 @@ export const ChatInterface = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask me anything..."
+              placeholder="Ask anything..."
               className="pr-20"
             />
             <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex space-x-1">

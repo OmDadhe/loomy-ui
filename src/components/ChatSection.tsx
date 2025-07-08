@@ -114,20 +114,20 @@ export const ChatSection = () => {
             <div className="mx-auto">
               <div className="w-80 bg-card/95 backdrop-blur-xl rounded-3xl shadow-wix-glow border border-border/20 overflow-hidden">
                 {/* Mobile Header */}
-                <div className="bg-primary px-4 py-3 flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                      <img 
-                        src="/lovable-uploads/4c845139-dd32-48d6-a657-28ef00c469e9.png"
-                        alt="Loomy"
-                        className="w-6 h-6"
-                      />
+                  <div className="bg-primary px-4 py-3 flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <img 
+                          src="/lovable-uploads/4c845139-dd32-48d6-a657-28ef00c469e9.png"
+                          alt="Loomy"
+                          className="w-6 h-6"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-white text-sm">Loomy</h3>
+                        <p className="text-xs text-white/80 font-medium">CBSE Class 7</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white text-sm">Loomy</h3>
-                      <p className="text-xs text-white/80">CBSE Class 7</p>
-                    </div>
-                  </div>
                   <div className="flex items-center space-x-1">
                     <div className="w-2 h-2 bg-accent-green rounded-full animate-pulse" />
                     <span className="text-xs text-white/90">Online</span>
@@ -192,20 +192,20 @@ export const ChatSection = () => {
             <div className="mx-auto">
               <div className="w-80 bg-card/95 backdrop-blur-xl rounded-3xl shadow-wix-glow border border-border/20 overflow-hidden">
                 {/* Mobile Header */}
-                <div className="bg-accent px-4 py-3 flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                      <img 
-                        src="/lovable-uploads/4c845139-dd32-48d6-a657-28ef00c469e9.png"
-                        alt="Loomy"
-                        className="w-6 h-6"
-                      />
+                  <div className="bg-accent px-4 py-3 flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <img 
+                          src="/lovable-uploads/4c845139-dd32-48d6-a657-28ef00c469e9.png"
+                          alt="Loomy"
+                          className="w-6 h-6"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-white text-sm">Loomy</h3>
+                        <p className="text-xs text-white/80 font-medium">ICSE Class 7</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white text-sm">Loomy</h3>
-                      <p className="text-xs text-white/80">ICSE Class 7</p>
-                    </div>
-                  </div>
                   <div className="flex items-center space-x-1">
                     <div className="w-2 h-2 bg-accent-green rounded-full animate-pulse" />
                     <span className="text-xs text-white/90">Online</span>

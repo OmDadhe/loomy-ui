@@ -128,12 +128,14 @@ export const HeroSection = () => {
                   {/* Subtle hover glow */}
                   <div className="absolute -inset-4 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
                   
-                  {/* Main avatar */}
-                  <img 
-                    src="/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png"
-                    alt="Loomy - Your AI Learning Companion"
-                    className="relative h-64 sm:h-80 lg:h-96 w-auto mx-auto transition-all duration-500 group-hover:scale-105"
-                  />
+                  {/* Main avatar in circular container */}
+                  <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border-4 border-primary/20 shadow-wix-glow">
+                    <img 
+                      src="/lovable-uploads/cba63fb0-4103-400d-abf9-cf7926cc4bc6.png"
+                      alt="Loomy - Your AI Learning Companion"
+                      className="w-64 h-64 object-contain transition-all duration-500 group-hover:scale-105"
+                    />
+                  </div>
                   
                   {/* Professional accent dots */}
                   <div className="absolute -top-2 -right-2 w-3 h-3 bg-accent rounded-full animate-pulse" />

@@ -69,16 +69,19 @@ export const HeroSection = () => {
               </p>
             </div>
 
-            {/* CTA Button - Single, prominent */}
+            {/* CTA Button - Unique and attractive design */}
             <div className={`pt-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <Button 
                 onClick={handleGetStarted}
-                variant="hero" 
+                variant="premium" 
                 size="xl"
-                className="group bg-primary hover:bg-primary/90 text-white px-10 py-5 text-lg font-semibold rounded-2xl shadow-wix-float hover:shadow-wix-glow transform hover:scale-105 transition-all duration-300"
+                className="group relative overflow-hidden bg-gradient-to-r from-primary via-primary-glow to-accent text-white px-12 py-6 text-lg font-bold rounded-full shadow-2xl hover:shadow-accent/50 transform hover:scale-110 transition-all duration-500 border-2 border-white/20 backdrop-blur-sm"
               >
-                Get Started
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                <span className="relative z-10 flex items-center">
+                  Get Started Free
+                  <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
+                </span>
               </Button>
             </div>
 
@@ -108,8 +111,8 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE - Professional Avatar Presentation */}
-          <div className="relative flex items-center justify-center lg:justify-end">
+          {/* RIGHT SIDE - Professional Avatar Presentation - Hidden on mobile */}
+          <div className="relative hidden lg:flex items-center justify-center lg:justify-end">
             
             {/* Professional container with modern design */}
             <div 

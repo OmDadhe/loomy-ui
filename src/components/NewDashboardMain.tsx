@@ -16,8 +16,8 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
       title: "Ask Loomy",
       subtitle: "I have a question",
       icon: MessageCircle,
-      color: "bg-green-100",
-      iconColor: "text-green-600",
+      color: "rgba(167, 243, 208, 0.8)",
+      iconColor: "#059669",
       onClick: () => onSectionChange('ask-loomy')
     },
     {
@@ -25,8 +25,8 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
       title: "Loomy Tales",
       subtitle: "Create stories and tales",
       icon: BookOpen,
-      color: "bg-pink-100",
-      iconColor: "text-pink-600",
+      color: "rgba(244, 192, 244, 0.8)",
+      iconColor: "#be185d",
       onClick: () => onSectionChange('loomy-tales')
     },
     {
@@ -34,8 +34,8 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
       title: "Brain Rush",
       subtitle: "Challenge your mind",
       icon: Brain,
-      color: "bg-purple-100",
-      iconColor: "text-purple-600",
+      color: "rgba(196, 181, 253, 0.8)",
+      iconColor: "#7c3aed",
       onClick: () => onSectionChange('brain-rush')
     },
     {
@@ -43,8 +43,8 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
       title: "Forum",
       subtitle: "Connect with community",
       icon: Users,
-      color: "bg-blue-100",
-      iconColor: "text-blue-600",
+      color: "rgba(147, 197, 253, 0.8)",
+      iconColor: "#2563eb",
       onClick: () => onSectionChange('forum')
     }
   ];
@@ -126,12 +126,13 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
           {sections.map((section) => (
             <Card
               key={section.id}
-              className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-wix-glow hover:scale-105 ${section.color} border-border/20`}
+              className="p-6 cursor-pointer transition-all duration-300 hover:shadow-wix-glow hover:scale-105 border-border/20"
+              style={{ backgroundColor: section.color }}
               onClick={section.onClick}
             >
               <div className="flex flex-col items-center text-center space-y-4">
                 <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center">
-                  <section.icon className={`w-8 h-8 ${section.iconColor}`} />
+                  <section.icon className="w-8 h-8" style={{ color: section.iconColor }} />
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">{section.title}</h3>

@@ -47,11 +47,27 @@ All colors MUST be HSL.
     --radius: 1rem;
 
     /* Blue to Pink Gradient Theme - Based on Reference Images */
-    --gradient-hero: linear-gradient(135deg, #5786C0 0%, #9DC6F2 25%, #B5D4ED 50%, #E8D5FF 75%, #FFD9F8 100%);
+    --gradient-hero: linear-gradient(180deg, #5786C0 0%, #9DC6F2 30%, #B5D4ED 60%, #E8D5FF 85%, #FFD9F8 100%);
     --gradient-primary: linear-gradient(135deg, #5786C0 0%, #9DC6F2 100%);
     --gradient-accent: linear-gradient(135deg, #B5D4ED 0%, #FFD9F8 100%);
     --gradient-feature: linear-gradient(180deg, #5786C0 0%, #FFD9F8 100%);
     --gradient-card: linear-gradient(135deg, rgba(87,134,192,0.1) 0%, rgba(255,217,248,0.1) 100%);
+    
+    /* Ask Loomy Button Color */
+    --ask-loomy-bg: rgba(167, 243, 208, 0.8);
+    --ask-loomy-icon: #059669;
+    
+    /* Loomy Tales Button Color */
+    --loomy-tales-bg: rgba(244, 192, 244, 0.8);
+    --loomy-tales-icon: #be185d;
+    
+    /* Brain Rush Button Color */
+    --brain-rush-bg: rgba(196, 181, 253, 0.8);
+    --brain-rush-icon: #7c3aed;
+    
+    /* Forum Button Color */
+    --forum-bg: rgba(147, 197, 253, 0.8);
+    --forum-icon: #2563eb;
 
     /* Purple/Blue Shadows */
     --shadow-float: 0 8px 32px -8px hsl(258 90% 66% / 0.15);

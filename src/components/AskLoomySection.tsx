@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Copy, Share, Volume2, Star, ThumbsUp, ThumbsDown, MessageSquare } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Copy, Share, Volume2, Star, ThumbsUp, ThumbsDown, MessageSquare, Upload, Mic, Send } from "lucide-react";
 
 export const AskLoomySection = () => {
   const [question, setQuestion] = useState("");
@@ -50,21 +51,41 @@ export const AskLoomySection = () => {
 
         {/* Question Input */}
         <Card className="mb-6 p-6 bg-white/90 backdrop-blur-sm border-border/20">
-          <div className="flex space-x-4">
-            <Input
+          <div className="space-y-4">
+            <Textarea
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="Ask me anything..."
-              className="flex-1 h-12 rounded-xl bg-background/50"
-              onKeyPress={(e) => e.key === 'Enter' && handleAskQuestion()}
+              className="min-h-[120px] resize-none bg-background/50 border-border/30"
+              onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && handleAskQuestion()}
             />
-            <Button 
-              onClick={handleAskQuestion}
-              disabled={isLoading}
-              className="px-6 h-12 bg-primary hover:bg-primary/90 rounded-xl"
-            >
-              {isLoading ? "Thinking..." : "Ask"}
-            </Button>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <Upload className="w-4 h-4 mr-1" />
+                  Upload
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <Mic className="w-4 h-4 mr-1" />
+                  Voice
+                </Button>
+              </div>
+              <Button 
+                onClick={handleAskQuestion}
+                disabled={isLoading || !question.trim()}
+                className="px-6 h-10 bg-primary hover:bg-primary/90 rounded-xl"
+              >
+                {isLoading ? "Thinking..." : <Send className="w-4 h-4" />}
+              </Button>
+            </div>
           </div>
         </Card>
 

@@ -8,53 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Wix Exact Color System */
-    --background: 220 50% 98%;
-    --foreground: 220 10% 10%;
+    /* Loomy Purple/Blue Theme - Based on Reference Image 1 */
+    --background: 245 50% 98%;
+    --foreground: 245 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 10% 10%;
+    --card-foreground: 245 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 10%;
+    --popover-foreground: 245 15% 15%;
 
-    /* Wix Primary Blue - #0073E6 */
-    --primary: 208 100% 45%;
+    /* Primary Purple - #8B5CF6 */
+    --primary: 258 90% 66%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 208 100% 55%;
+    --primary-glow: 258 90% 76%;
 
     /* Secondary - Light purple/blue */
     --secondary: 250 50% 92%;
-    --secondary-foreground: 222 84% 5%;
+    --secondary-foreground: 245 15% 15%;
 
     --muted: 250 25% 90%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 245 16% 47%;
 
-    /* Wix Accent Colors */
-    --accent: 14 100% 60%;  /* Wix Orange #FF6B35 */
+    /* Accent Colors */
+    --accent: 280 100% 70%;  /* Bright purple accent */
     --accent-foreground: 0 0% 100%;
     --accent-green: 142 76% 36%;
-    --accent-purple: 259 94% 51%;  /* Wix Purple #7C3AED */
+    --accent-purple: 280 100% 70%;
+    --accent-blue: 220 100% 70%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 221 83% 53%;
+    --border: 245 20% 88%;
+    --input: 245 20% 88%;
+    --ring: 258 90% 66%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Wix Exact Gradients */
-    --gradient-hero: linear-gradient(135deg, #F8FAFF 0%, #F0F4FF 50%, #E8F2FF 100%);
+    /* Loomy Purple/Blue Gradients - Matching Reference Image 1 */
+    --gradient-hero: linear-gradient(135deg, #E8E3FF 0%, #D4C5FF 25%, #C4B5FD 50%, #B8A8FF 75%, #A78BFA 100%);
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, #FF8A60 100%);
-    --gradient-feature: linear-gradient(180deg, hsl(0 0% 100%) 0%, #F8FAFF 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, #B794F6 100%);
+    --gradient-feature: linear-gradient(180deg, hsl(0 0% 100%) 0%, #F3F0FF 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,245,255,0.9) 100%);
 
-    /* Wix Shadows */
-    --shadow-float: 0 8px 32px -8px hsl(221 83% 53% / 0.15);
+    /* Purple/Blue Shadows */
+    --shadow-float: 0 8px 32px -8px hsl(258 90% 66% / 0.15);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(220 13% 91% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(258 90% 66% / 0.1);
 
     /* Animation Variables */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);

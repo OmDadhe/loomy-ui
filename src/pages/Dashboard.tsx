@@ -22,7 +22,7 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen wix-gradient-hero">
       <DashboardNavigation 
         activeSection={activeSection} 
         onSectionChange={handleSectionChange} 

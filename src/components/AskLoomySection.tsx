@@ -42,59 +42,19 @@ export const AskLoomySection = () => {
   };
 
   return (
-    <div className="min-h-screen wix-gradient-hero">
-      <div className="max-w-4xl mx-auto p-6">
+    <div className="min-h-screen flex flex-col">
+      <div className="flex-1 max-w-4xl mx-auto p-6">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Ask Loomy</h1>
+          <h1 className="text-3xl font-bold text-black mb-2">Ask Loomy</h1>
           <p className="text-muted-foreground">I'm here to help you learn and understand</p>
         </div>
 
-        {/* Question Input */}
-        <Card className="mb-6 p-6 bg-white/90 backdrop-blur-sm border-border/20">
-          <div className="space-y-4">
-            <Textarea
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Ask me anything..."
-              className="min-h-[120px] resize-none bg-background/50 border-border/30"
-              onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && handleAskQuestion()}
-            />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <Upload className="w-4 h-4 mr-1" />
-                  Upload
-                </Button>
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <Mic className="w-4 h-4 mr-1" />
-                  Voice
-                </Button>
-              </div>
-              <Button 
-                onClick={handleAskQuestion}
-                disabled={isLoading || !question.trim()}
-                className="px-6 h-10 bg-primary hover:bg-primary/90 rounded-xl"
-              >
-                {isLoading ? "Thinking..." : <Send className="w-4 h-4" />}
-              </Button>
-            </div>
-          </div>
-        </Card>
-
         {/* Messages */}
-        <div className="space-y-4">
+        <div className="space-y-4 mb-6">
           {messages.map((message, index) => (
             <Card 
               key={index} 
-              className={`p-4 ${message.type === 'user' ? 'ml-12 bg-primary/10' : 'mr-12 bg-white/90'} backdrop-blur-sm border-border/20`}
+              className={`p-4 ${message.type === 'user' ? 'ml-12 bg-green-50/80' : 'mr-12 bg-white/90'} backdrop-blur-sm border-border/20`}
             >
               <div className="flex items-start space-x-3">
                 {message.type === 'loomy' && (
@@ -166,6 +126,50 @@ export const AskLoomySection = () => {
               </div>
             </Card>
           ))}
+        </div>
+      </div>
+
+      {/* Question Input - Fixed at bottom */}
+      <div className="sticky bottom-0 bg-white/95 backdrop-blur-sm border-t border-border/20 p-6">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-6 bg-white/90 backdrop-blur-sm border-border/20">
+            <div className="space-y-4">
+              <Textarea
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+                placeholder="Ask me anything..."
+                className="min-h-[120px] resize-none bg-background/50 border-border/30"
+                onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && handleAskQuestion()}
+              />
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    <Upload className="w-4 h-4 mr-1" />
+                    Upload
+                  </Button>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    <Mic className="w-4 h-4 mr-1" />
+                    Voice
+                  </Button>
+                </div>
+                <Button 
+                  onClick={handleAskQuestion}
+                  disabled={isLoading || !question.trim()}
+                  className="px-6 h-10 bg-green-600 hover:bg-green-700 rounded-xl"
+                >
+                  {isLoading ? "Thinking..." : <Send className="w-4 h-4" />}
+                </Button>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </div>

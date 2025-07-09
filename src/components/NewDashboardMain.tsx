@@ -50,7 +50,7 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
   ];
 
   return (
-    <div className="min-h-screen wix-gradient-hero">
+    <div className="min-h-screen">
       {/* Header Bar */}
       <div className="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-sm border-b border-border/20">
         <div className="flex items-center space-x-4">
@@ -94,7 +94,7 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
               <MessageCircle className="w-6 h-6 text-yellow-600" />
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-1">Fun Fact!</h3>
+              <h3 className="font-bold text-lg mb-1 text-black">Fun Fact!</h3>
               <p className="text-sm text-muted-foreground">
                 A group of flamingos is called a "flamboyance"
               </p>
@@ -113,7 +113,7 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
               />
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-1">{greeting}</h3>
+              <h3 className="font-bold text-lg mb-1 text-black">{greeting}</h3>
               <p className="text-sm text-muted-foreground">
                 Math character energy detected. Loomy located, brain mode activated!
               </p>
@@ -135,7 +135,7 @@ export const NewDashboardMain = ({ onSectionChange }: NewDashboardMainProps) => 
                   <section.icon className="w-8 h-8" style={{ color: section.iconColor }} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">{section.title}</h3>
+                  <h3 className="font-bold text-lg mb-1 text-black">{section.title}</h3>
                   <p className="text-sm text-muted-foreground">{section.subtitle}</p>
                 </div>
               </div>

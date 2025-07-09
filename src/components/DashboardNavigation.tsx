@@ -15,7 +15,8 @@ import {
   Archive,
   Trash2,
   Menu,
-  X
+  X,
+  User
 } from "lucide-react";
 
 interface DashboardNavigationProps {
@@ -213,6 +214,23 @@ export const DashboardNavigation = ({ activeSection, onSectionChange }: Dashboar
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Account Section */}
+        <div className="p-4 border-t border-border/20">
+          <Button
+            variant={activeSection === 'account' ? 'default' : 'ghost'}
+            onClick={() => {
+              onSectionChange('account');
+              setIsOpen(false);
+            }}
+            className="w-full justify-start"
+          >
+            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+              <span className="text-sm font-medium">K</span>
+            </div>
+            Account
+          </Button>
         </div>
       </div>
 

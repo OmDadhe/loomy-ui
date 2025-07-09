@@ -27,10 +27,10 @@ export const LoomyTalesSection = () => {
   };
 
   return (
-    <div className="min-h-screen wix-gradient-hero">
+    <div className="min-h-screen">
       <div className="max-w-4xl mx-auto p-6">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Loomy Tales</h1>
+          <h1 className="text-3xl font-bold text-black mb-2">Loomy Tales</h1>
           <p className="text-muted-foreground">Cuddle up and get curious—Loomy's got a tale to tell!</p>
         </div>
 
@@ -58,7 +58,7 @@ export const LoomyTalesSection = () => {
           <div className="space-y-6">
             {/* Story Creation */}
             <Card className="p-6 bg-white/90 backdrop-blur-sm border-border/20">
-              <h3 className="font-bold text-lg mb-4">Concept Builder</h3>
+              <h3 className="font-bold text-lg mb-4 text-black">Concept Builder</h3>
               <Textarea
                 value={storyPrompt}
                 onChange={(e) => setStoryPrompt(e.target.value)}
@@ -102,7 +102,7 @@ export const LoomyTalesSection = () => {
               
               <Button 
                 onClick={handleGenerateStory}
-                className="w-full h-12 bg-primary hover:bg-primary/90 rounded-xl"
+                className="w-full h-12 bg-pink-600 hover:bg-pink-700 rounded-xl"
               >
                 <Sparkles className="w-4 h-4 mr-2" />
                 Generate Story
@@ -119,7 +119,7 @@ export const LoomyTalesSection = () => {
                     className="w-16 h-16 rounded-xl object-cover"
                   />
                   <div>
-                    <h3 className="font-bold text-lg">Your Generated Tale</h3>
+                    <h3 className="font-bold text-lg text-black">Your Generated Tale</h3>
                     <p className="text-sm text-muted-foreground">Genre: {selectedGenre}</p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export const LoomyTalesSection = () => {
 
         {activeTab === "history" && (
           <div className="space-y-4">
-            <h3 className="font-bold text-lg mb-4">Previously created Tales</h3>
+            <h3 className="font-bold text-lg mb-4 text-black">Previously created Tales</h3>
             {previousStories.map((story, index) => (
               <Card key={index} className="p-4 bg-white/90 backdrop-blur-sm border-border/20">
                 <div className="flex items-center space-x-4">

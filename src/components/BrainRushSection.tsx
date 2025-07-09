@@ -60,7 +60,7 @@ export const BrainRushSection = () => {
 
   if (selectedGame) {
     return (
-      <div className="min-h-screen wix-gradient-hero">
+      <div className="min-h-screen">
         <div className="max-w-4xl mx-auto p-6">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-4">
@@ -71,7 +71,7 @@ export const BrainRushSection = () => {
               >
                 ← Back
               </Button>
-              <h1 className="text-3xl font-bold text-foreground">
+              <h1 className="text-3xl font-bold text-black">
                 {games.find(g => g.id === selectedGame)?.title}
               </h1>
             </div>
@@ -88,11 +88,11 @@ export const BrainRushSection = () => {
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                 <Gamepad2 className="w-10 h-10 text-primary" />
               </div>
-              <h2 className="text-2xl font-bold">Game Starting Soon...</h2>
+              <h2 className="text-2xl font-bold text-black">Game Starting Soon...</h2>
               <p className="text-muted-foreground">
                 Get ready to challenge your brain with {games.find(g => g.id === selectedGame)?.title}!
               </p>
-              <Button className="mt-4 bg-primary hover:bg-primary/90">
+              <Button className="mt-4 bg-purple-600 hover:bg-purple-700">
                 Start Game
               </Button>
             </div>
@@ -103,7 +103,7 @@ export const BrainRushSection = () => {
   }
 
   return (
-    <div className="min-h-screen wix-gradient-hero">
+    <div className="min-h-screen">
       <div className="max-w-4xl mx-auto p-6">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
@@ -113,8 +113,8 @@ export const BrainRushSection = () => {
               className="w-16 h-16 rounded-full"
             />
             <div>
-              <h1 className="text-4xl font-bold text-foreground">
-                BRAIN <span className="text-primary">RUSH</span>
+              <h1 className="text-4xl font-bold text-black">
+                BRAIN <span className="text-purple-600">RUSH</span>
               </h1>
               <p className="text-lg text-muted-foreground mt-2">
                 Challenge your brain with Loomy—every point you earn is a win!
@@ -142,7 +142,7 @@ export const BrainRushSection = () => {
                   }`} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">{game.title}</h3>
+                  <h3 className="font-bold text-lg mb-1 text-black">{game.title}</h3>
                   <p className="text-sm text-muted-foreground">{game.description}</p>
                 </div>
                 <Button 
@@ -159,7 +159,7 @@ export const BrainRushSection = () => {
 
         {/* Stats Section */}
         <Card className="mt-8 p-6 bg-white/90 backdrop-blur-sm border-border/20">
-          <h3 className="font-bold text-lg mb-4">Your Stats</h3>
+          <h3 className="font-bold text-lg mb-4 text-black">Your Stats</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">15</div>
